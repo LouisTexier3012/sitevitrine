@@ -1,24 +1,56 @@
 miseajour(1);
+let nbpage = 2;
 window.addEventListener("wheel", function(event) {
+    let opacity =6;
     if (event.deltaY < 0) {
         // L'utilisateur fait défiler vers le haut
+        let page = document.getElementById("page");
         let ancienindis = parseInt(window.getComputedStyle(document.body).getPropertyValue("background-image").split("fond-")[1].split(".")[0]);
         let nouveaufond = ancienindis-1;
         if (nouveaufond<1){
             nouveaufond=2;
         }
-        document.body.style.backgroundImage="url('img/fond/fond-"+nouveaufond+".jpg')";
-        miseajour(nouveaufond);
+        let chb= setInterval(function (){
+            opacity=opacity+1;
+            page.innerText="";
+            page.style.backgroundColor="rgb(0 0 0 / 0"+opacity+"%)";
+            if (opacity>=100){
+                document.body.style.backgroundImage="url('img/fond/fond-"+nouveaufond+".jpg')";
+                miseajour(nouveaufond);
+                clearInterval(chb);
+                let chbplus= setInterval(function (){
+                    opacity=opacity-1;
+                    page.style.backgroundColor="rgb(0 0 0 / 0"+opacity+"%)";
+                    if (opacity<=6){
+                        clearInterval(chbplus);
+                    }
+                },2)
+            }
+        },2);
     } else if (event.deltaY > 0) {
         // L'utilisateur fait défiler vers le bas
         let ancienindis = parseInt(window.getComputedStyle(document.body).getPropertyValue("background-image").split("fond-")[1].split(".")[0]);
         let nouveaufond = ancienindis+1;
-        if (nouveaufond>2){
+        if (nouveaufond>nbpage){
             nouveaufond=1;
         }
-        console.log(nouveaufond);
-        document.body.style.backgroundImage="url('img/fond/fond-"+nouveaufond+".jpg')";
-        miseajour(nouveaufond);
+        let chb= setInterval(function (){
+            opacity=opacity+1;
+            page.innerText="";
+            page.style.backgroundColor="rgb(0 0 0 / 0"+opacity+"%)";
+            if (opacity>=100){
+                document.body.style.backgroundImage="url('img/fond/fond-"+nouveaufond+".jpg')";
+                miseajour(nouveaufond);
+                clearInterval(chb);
+                let chbplus= setInterval(function (){
+                    opacity=opacity-1;
+                    page.style.backgroundColor="rgb(0 0 0 / 0"+opacity+"%)";
+                    if (opacity<=6){
+                        clearInterval(chbplus);
+                    }
+                },2)
+            }
+        },2);
     }
 });
 
