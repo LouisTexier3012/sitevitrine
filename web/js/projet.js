@@ -41,12 +41,12 @@ function miseajour1(){
     nom.id="nom";
     nom.style.fontWeight="bold";
     main.appendChild(nom);
-    adaptertext(nom.id,100,80,100);
+    adaptertext(nom.id,100,80,100, '#362d2d');
     let intitule =document.createElement("p");
     intitule.innerText="Etudiant en BUT informatique";
     intitule.id="intitule";
     main.appendChild(intitule);
-    adaptertext(intitule.id,220,80,70);
+    adaptertext(intitule.id,220,80,70,'#1c1717');
 }
 
 function miseajour2(){
