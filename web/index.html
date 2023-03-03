@@ -6,12 +6,24 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <title>Louis Texier</title>
     <!-- insertion script -->
-    <script defer type="text/javascript" src="js/projet.js"></script>
+    <script defer type="text/javascript" src="js/script.js"></script>
+    <script defer type="text/javascript" src="js/projets.js"></script>
 </head>
 <body>
 <div id="page">
-    <button id="haut" class="cacher" >Haut</button>
-    <button id="bas" class="visible" >bas</button>
+    <div id="image" class="cacher">
+            <img class="visible" src="">
+            <img class="cacher" src="">
+            <img class="cacher" src="">
+            <img class="cacher" src="">
+    </div>
 </div>
 </body>
+<footer>
+    <div id="pages"></div>
+    <div id="direction">
+        <button id="haut" onclick="pagehaut()" class="cacher" >Haut</button>
+        <button id="bas" onclick="pagebas()" class="visible" >bas</button>
+    </div>
+</footer>
 </html>
