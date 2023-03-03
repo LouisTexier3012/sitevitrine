@@ -1,7 +1,7 @@
 const fonctions = [miseajour1, miseajour2];
 const actualité ="Étudiant en 2 ème année de BUT informatique, je recherche un stage\n de 12 semaine à partir du 17 avril, dans le développement WEB.";
-const desc ="Je suis une personne capable d'apprendre assez rapidement \n" +
-            "et de m'adapté dans des situation complexe ou en manque de temps.\n " +
+const desc ="Je suis une personne capable d'apprendre assez rapidement et de m'adapté\n" +
+            " dans des situation complexe ou en manque de temps.\n " +
             "Je suis passionné par le développement WEB et cherche a en apprendre plus.\n" +
             "je suis tres autonome mais sais faire de mon mieux en travaillant en groupe.";
 const nbpage = 2;
@@ -56,25 +56,25 @@ function miseajour1(){
     titredescr.id="tdesc";
     titredescr.style.fontWeight="bold";
     main.appendChild(titredescr);
-    adaptertext(titredescr.id,400,80,50,'#362d2d');
+    adaptertext(titredescr.id,450,80,50,'#362d2d');
     let descr =document.createElement("p");
     descr.innerText=desc;
     descr.id="desc";
     descr.style.fontWeight="bold";
     main.appendChild(descr);
-    adaptertext(descr.id,475,85,30, '#362d2d');
+    adaptertext(descr.id,525,85,30, '#362d2d');
     let titreactu =document.createElement("p");
     titreactu.innerText="Actualité:";
     titreactu.id="tactu";
     titreactu.style.fontWeight="bold";
     main.appendChild(titreactu);
-    adaptertext(titreactu.id,625,80,50,'#362d2d');
+    adaptertext(titreactu.id,700,80,50,'#362d2d');
     let actu =document.createElement("p");
     actu.innerText=actualité;
     actu.id="actu";
     actu.style.fontWeight="bold";
     main.appendChild(actu);
-    adaptertext(actu.id,700,85,30, '#362d2d');
+    adaptertext(actu.id,775,85,30, '#362d2d');
     let intitule =document.createElement("p");
     intitule.innerText="Etudiant en BUT informatique";
     intitule.id="intitule";
@@ -85,14 +85,14 @@ function miseajour1(){
     language.id="language";
     language.style.fontWeight="bold";
     main.appendChild(language);
-    adaptertext(language.id,250,1100,50,'#362d2d');
+    adaptertext(language.id,250,1500,50,'#362d2d');
     const nomlang=["HTML","PHP","CSS","Java Script"];
     for (let i=0; i<4; i++) {
         let image = document.createElement("img");
         image.src="./img/langage/langage ("+i+").png";
         image.style.position="absolute";
         image.style.top="380px";
-        const left = 1150+(120*i);
+        const left = 1550+(120*i);
         image.style.left=left+"px";
         image.style.height="120px";
         image.style.width="120px";
@@ -104,14 +104,14 @@ function miseajour1(){
     logiciel.id="logiciel";
     logiciel.style.fontWeight="bold";
     main.appendChild(logiciel);
-    adaptertext(logiciel.id,500,1100,50,'#362d2d');
+    adaptertext(logiciel.id,500,1500,50,'#362d2d');
     const nomlog=["PhpStorm","intellij"];
     for (let i=0; i<2; i++) {
         let imagelog = document.createElement("img");
         imagelog.src="./img/langage/logiciel ("+i+").png";
         imagelog.style.position="absolute";
         imagelog.style.top="620px";
-        const left = 1160+(120*(i));
+        const left = 1560+(120*(i));
         imagelog.style.left=left+"px";
         imagelog.style.height="120px";
         imagelog.style.width="120px";
