@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <title>Louis Texier</title>
     <!-- insertion script -->
@@ -41,42 +41,68 @@
     </div>
 
     <!-- Projet  -->
-    <!--TODO faire les fleche pour le changement d'img et les different description et fond a changé  -->
+    <!--TODO les different description et fond a changé  -->
     <div id="Projet" class="cacher">
         <div id="projets" class="info">
             <p id="titreprojet" class="titre">Projet</p>
         </div>
+        <!--TODO Screen a refaire -->
         <div id="projetimage" class="image">
-            <!--TODO Screen a refaire -->
-            <img class="proj" src="./img/projet/Projet-1.PNG" title="Faireply">
+
+            <img id="Projet-1" class="proj" src="./img/projet/Projet-1.PNG" title="Faireply">
             <div class="texte-survol cacher">
-                <p>Description de se projet</p>
+                <div class="contenue-texte-survol">
+                    <img class="logo" src="./img/projet/Logo/faireply.png" title="Faireply">
+                    <p>Faireply est un site de question, réponse et vote. Le But du site est de laisser certain utilisateur posé des questions ouvertes dont les réponses seront séparées en plusieurs sections prédéfinit par l'organisateur. Ce site a été codé entièrement en HTML, CSS et PHP, mais le projet a pu m'emmener à travailler d'autre langage tel que SQL et PL/SQL.</p>
+                    <a href=""><button>En savoir plus</button></a>
+                </div>
             </div>
-            <img class="proj cacher" src="./img/projet/Projet-2.PNG" title="Champ de mines">
+
+            <img id="Projet-2" class="proj cacher" src="./img/projet/Projet-2.PNG" title="Champ de mines">
             <div class="texte-survol cacher">
-                <p>Description de se projet</p>
+                <div class="contenue-texte-survol">
+                    <img class="logo" src="./img/projet/Logo/mine.png" title="Champ de mines">
+                    <p></p>
+                    <a href=""><button>En savoir plus</button></a>
+                </div>
             </div>
-            <img class="proj cacher" src="./img/projet/Projet-3.PNG" title="Site vitrine">
+
+            <img id="Projet-3" class="proj cacher" src="./img/projet/Projet-3.PNG" title="Site vitrine">
             <div class="texte-survol cacher">
-                <p>Description de se projet</p>
+                <div class="contenue-texte-survol">
+                    <img class="logo" src="./img/projet/Logo/faireply.png" title="Faireply">
+                    <p></p>
+                    <a href=""><button>En savoir plus</button></a>
+                </div>
             </div>
-            <img class="proj cacher" src="./img/projet/Projet-4.PNG" title="aventurier du rail">
+
+            <img id="Projet-4" class="proj cacher" src="./img/projet/Projet-4.PNG" title="aventurier du rail">
             <div class="texte-survol cacher">
-                <p>Description de se projet</p>
+                <div class="contenue-texte-survol">
+                    <img class="logo" src="./img/projet/Logo/faireply.png" title="Faireply">
+                    <p></p>
+                    <a href=""><button>En savoir plus</button></a>
+                </div>
+            </div>
+            <div id="button">
+                <button class="projetsuivant" onclick="prochainprojet(false)">Projet precedant</button>
+                <button class="projetsuivant" onclick="prochainprojet(true)">Projet suivant</button>
             </div>
         </div>
     </div>
 
     <!-- Experience et Etude  -->
     <!--TODO tout a faire pour Experience et Etude -->
+    <div id="ExpetEtu" class="cacher">
+    </div>
 </div>
 </body>
 <footer>
     <div id="pages"></div>
-    <a href="fichier/CV.pdf" download="Louis-TEXIER-CV.pdf"><button>Télécharger mon CV</button></a>
+    <a href="fichier/CV.pdf" download="Louis-TEXIER-CV.pdf"><button id="download">Télécharger mon CV</button></a>
     <div id="direction">
-        <button id="haut" onclick="pagehaut()" class="cacher" >Haut</button>
-        <button id="bas" onclick="pagebas()" class="visible" >bas</button>
+        <button id="haut" onclick="pagehaut()" class="cacher direction" >Haut</button>
+        <button id="bas" onclick="pagebas()" class="visible direction" >bas</button>
     </div>
 </footer>
 </html>

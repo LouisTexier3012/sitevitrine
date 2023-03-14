@@ -42,22 +42,34 @@ body {
 #contenue div.page{
     display: flex;
     justify-content: space-between;
-    height: 98%;
+    height: 95vh;
     padding: 5%;
 }
 
-footer{
-    height: 2%;
+footer {
+    height: 5vh;
     background-color: rgba(58, 26, 93, 0.76);
     display: flex;
     justify-content: space-between;
+}
+
+footer button {
+    height: auto;
+    width: auto; /* largeur en fonction du texte */
+    margin-top: 0;
+    font-size: 2vh; /* taille du texte relative à la largeur */
+    max-font-size: 2vh; /* taille du texte relative à la largeur */
+    background-color: transparent; /* arrière-plan transparent */
+    color: white; /* couleur du texte */
+    border: none; /* pas de bordure */
+    cursor: pointer; /* curseur de souris en forme de main */
 }
 
 
 
 /*text par class*/
 .titre{
-    font-size: 725%;
+    font-size: 5vw;
     color: #362d2d;
     font-weight: bold;
     height: auto;
@@ -67,7 +79,7 @@ footer{
 }
 
 .sous-titre{
-    font-size: 500%;
+    font-size: 4vw;
     color: #362d2d;
     height: auto;
     margin-top: 0;
@@ -76,7 +88,7 @@ footer{
 
 .partie-titre{
     color: #362d2d;
-    font-size: 300%;
+    font-size: 2vw;
     font-weight: bold;
     margin-bottom: 2%;
     font-family: Cambria, serif;
@@ -84,20 +96,21 @@ footer{
 
 .text{
     color: #362d2d;
-    font-size: 150%;
+    font-size: 1vw;
     margin-top: 0;
     font-family: Nunito, serif;
 }
 
 /*image*/
 .logo{
-    height: 120px;
-    width: 120px;
+    height: 5vw;
+    width: 5vw;
     margin: 0;
 }
 
 .logos{
-    margin-left: 2%;
+    margin-left: 15%;
+    margin-top: 5%;
 }
 
 /*page d'accueil*/
@@ -111,20 +124,36 @@ footer{
     margin-top: 20%;
 }
 
-.cacher{
-    display: none;
-}
-
 
 /*page de Projet*/
+
+.projetsuivant{
+    align-self: start;
+    height: auto;
+    width: auto; /* largeur en fonction du texte */
+    margin-top: 0;
+    font-size: 2vh; /* taille du texte relative à la largeur */
+    max-font-size: 2vh; /* taille du texte relative à la largeur */
+    background-color: transparent; /* arrière-plan transparent */
+    color: #312929; /* couleur du texte */
+    border: none; /* pas de bordure */
+    cursor: pointer; /* curseur de souris en forme de main */
+}
+
 #projetimage{
+    display: flex;
+    flex-direction: column;
     position: relative;
+    width: 80%;
+    height: 90%;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 20%;
 }
 
 .proj{
-    width: 75%;
-    height: 75%;
-    margin-left: 20%;
+    width: 85%;
+    height: 80%;
     margin-top: 5%;
 }
 
@@ -132,18 +161,49 @@ footer{
     position: absolute; /* permet de positionner la div par rapport à l'image */
     top: 0;
     left: 0;
-    width: 75%;
-    height: 75%;
-    background-color: rgba(0, 0, 0, 0.7); /* fond opaque */
+    width: 85%;
+    height: 80%;
+    background-color: rgba(0, 0, 0, 0.71); /* fond opaque */
     justify-content: center; /* centre le texte horizontalement et verticalement */
     align-items: center;
     text-align: center;
-    margin-left: 20%;
     margin-top: 5%;
 }
 
-.texte-survol p {
+
+
+.contenue-texte-survol{
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* centre le texte horizontalement et verticalement */
+    align-items: center;
+}
+
+.contenue-texte-survol p {
     color: #fff;
     font-size: 20px;
-    padding: 20px;
+    padding: 50px;
+}
+
+.contenue-texte-survol img{
+    height: 6vw;
+    width: 10vw;
+    margin: 0;
+}
+
+.contenue-texte-survol button{
+    height: auto;
+    width: auto; /* largeur en fonction du texte */
+    margin: 0;
+    font-size: 20px;
+    max-font-size: 2vh; /* taille du texte relative à la largeur */
+    background-color: transparent; /* arrière-plan transparent */
+    color: white; /* couleur du texte */
+    border: none; /* pas de bordure */
+    cursor: pointer; /* curseur de souris en forme de main */
+}
+
+
+.cacher{
+    display: none;
 }
