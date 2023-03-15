@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title>{% block page_title %}The Feed{% endblock %}</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="{{ asset("assets/css/styles.css") }}">
+</head>
+<body>
+<header>
+    <div id="titre" class="center">
+        <a href="{{ route("feed") }}"><span>The Feed</span></a>
+        <nav>
+            <a href="{{ route("feed") }}">Accueil</a>
+            {% if idConnecte is not null %}
+            <a href="{{  route("pagePerso",{'idUser': idConnecte}) }}">Ma page</a>
+            <a href="{{  route("deconnecter") }}">Déconnexion</a>
+            {% else %}
+            <a href="{{  route("afficherFormulaireCreation") }}">Inscription</a>
+            <a href="{{  route("afficherFormulaireConnexion") }}">Connexion</a>
+            {% endif %}
+        </nav>
+    </div>
+</header>
+<div id="flashes-container">
+    {%  set messageflash = messagesFlash.lireTousMessages() %}
+    {% for type in ['success', 'error'] %}
+        {% for message in messageflash[type] %}
+            <span class="flashes flashes-{{ type }}">{{ message }}</span>
+        {% endfor %}
+    {% endfor %}
+</div>
+{% block page_content %}{% endblock %}
+</body>
+</html>
