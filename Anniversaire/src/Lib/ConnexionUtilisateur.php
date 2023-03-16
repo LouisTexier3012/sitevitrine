@@ -1,5 +1,5 @@
 <?php
-namespace App\Covoiturage\Lib;
+namespace Anniversaire\Controller\Lib;
 
 class ConnexionUtilisateur
 {

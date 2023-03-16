@@ -1,8 +1,8 @@
 <?php
 
-namespace Anivairsaire\Controller\Controller;
+namespace Anniversaire\Controller\Controller;
 
-use App\Covoiturage\Controller\GenericController;
+use Anniversaire\Controller\Controller\GenericController;
 
 class Controllermessage extends  GenericController{
 

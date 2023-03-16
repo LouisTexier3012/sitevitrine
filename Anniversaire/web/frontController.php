@@ -1,10 +1,9 @@
 <?php
-use App\Covoiturage\Controller\ControllerVoiture;
-use App\Covoiturage\Controller\GenericController;
 
-//require_once __DIR__ . "/../src/Controller/ControllerVoiture.php";
-//require_once __DIR__ . "/../src/Controller/ControllerUtilisateur.php";
-require_once __DIR__."/../src/Lib/Psr4AutoloaderClass.php";
+use Anniversaire\Controller\Lib\Psr4AutoloaderClass;
+use Anniversaire\Controller\Controller\GenericController;
+use Anniversaire\Controller\Controller\Controllermessage;
+
 /**
  * @param string $control
  * @return void
@@ -26,14 +25,14 @@ function extracted(string $control): void
 }
 
 // instantiate the loader
-$loader = new App\Covoiturage\Lib\Psr4AutoloaderClass();
+$loader = new Psr4AutoloaderClass();
 // register the base directories for the namespace prefix
 $loader->addNamespace('App\Covoiturage', __DIR__ . '/../src');
 // register the autoloader
 $loader->register();
 
 if (isset($_GET['controller'])){
-    $controller ="App\Covoiturage\Controller\Controller".ucfirst($_GET['controller']);
+    $controller ="Anniversaire\Controller\Controller".ucfirst($_GET['controller']);
     if (class_exists($controller)){
         extracted($controller);
     }else{

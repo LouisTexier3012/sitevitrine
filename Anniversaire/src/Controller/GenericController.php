@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Covoiturage\Controller;
+namespace Anniversaire\Controller\Controller;
 
-use App\Covoiturage\Lib\PreferenceControleur;
+use Anniversaire\Controller\Lib\PreferenceControleur;
 
 class GenericController{
     protected static function afficheVue(string $cheminVue, array $parametres = []) : void {
