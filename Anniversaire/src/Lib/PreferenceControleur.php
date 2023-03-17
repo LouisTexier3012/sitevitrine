@@ -1,6 +1,6 @@
 <?php
 
-namespace Anniversaire\Controller\Lib;
+namespace app\Anniversaire\Lib;
 
 use App\Covoiturage\Model\HTTP\Cookie;
 

@@ -1,8 +1,9 @@
 <?php
 
-namespace Anniversaire\Controller\Controller;
+namespace app\Anniversaire\Controller;
 
-use Anniversaire\Controller\Lib\PreferenceControleur;
+
+use app\Anniversaire\Lib\PreferenceControleur;
 
 class GenericController{
     protected static function afficheVue(string $cheminVue, array $parametres = []) : void {
@@ -20,6 +21,6 @@ class GenericController{
 
     public static function enregistrerPreference(){
         PreferenceControleur::enregistrer($_GET["controleur_defaut"]);
-        ControllerVoiture::afficheVue ('view.php',["pagetitle"=>"préférence enregistré","cheminVueBody"=>"enregistrerPreference.php"]);
+        ControllerMessage::afficheVue ('view.php',["pagetitle"=>"préférence enregistré","cheminVueBody"=>"enregistrerPreference.php"]);
     }
 }

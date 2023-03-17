@@ -1,5 +1,5 @@
 <?php
-namespace Anniversaire\Controller\Lib;
+namespace app\Anniversaire\Lib;
 
 class ConnexionUtilisateur
 {

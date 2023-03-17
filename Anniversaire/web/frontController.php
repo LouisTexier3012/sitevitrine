@@ -1,8 +1,17 @@
 <?php
+namespace app;
+require_once __DIR__."/../src/Lib/Psr4AutoloaderClass.php";
+// instantiate the loader
+$loader = new Anniversaire\Lib\Psr4AutoloaderClass();
+// register the base directories for the namespace prefix
+$loader->addNamespace('app\Anniversaire', __DIR__ . '/../src');
+// register the autoloader
+$loader->register();
+use app\Anniversaire\Controller\GenericController;
+use app\Anniversaire\Controller\ControllerMessage;
+use app\Anniversaire\Lib\PreferenceControleur;
 
-use Anniversaire\Controller\Lib\Psr4AutoloaderClass;
-use Anniversaire\Controller\Controller\GenericController;
-use Anniversaire\Controller\Controller\Controllermessage;
+
 
 /**
  * @param string $control
@@ -24,28 +33,21 @@ function extracted(string $control): void
     }
 }
 
-// instantiate the loader
-$loader = new Psr4AutoloaderClass();
-// register the base directories for the namespace prefix
-$loader->addNamespace('App\Covoiturage', __DIR__ . '/../src');
-// register the autoloader
-$loader->register();
 
 if (isset($_GET['controller'])){
-    $controller ="Anniversaire\Controller\Controller".ucfirst($_GET['controller']);
+    $controller ="app\Anniversaire\Controller\Controller".ucfirst($_GET['controller']);
     if (class_exists($controller)){
         extracted($controller);
     }else{
         GenericController::error("Page Not Found");
     }
 }else{
-    if (\App\Covoiturage\Lib\PreferenceControleur::existe()){
-        $controller = "App\Covoiturage\Controller\Controller".ucfirst(\App\Covoiturage\Lib\PreferenceControleur::lire());
-        extracted($controller);
+    if (PreferenceControleur::existe()){
+        $controller = "app\Anniversaire\Controller\Controller".ucfirst(PreferenceControleur::lire());
     }else {
-        $controller = "App\Covoiturage\Controller\ControllerVoiture";
-        extracted($controller);
+        $controller = "app\Anniversaire\Controller\Controllermessage";
     }
+    extracted($controller);
 }
 
 // Appel de la méthode statique $action de ControllerVoiture
