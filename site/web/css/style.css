@@ -27,7 +27,7 @@ body {
     margin: 0;
     padding: 0;
     overflow: hidden; /* empêche le scrolling */
-    background-image: url('../img/fond/fond-1.jpg');
+    background-image: url('../img/premier/fond/fond-1.jpg');
     background-size: cover;
     background-position: center;
 }

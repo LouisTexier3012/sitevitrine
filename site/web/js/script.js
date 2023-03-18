@@ -1,4 +1,4 @@
-if (window.innerWidth > 600) {
+if (window.innerWidth > 768) {
     let imageprojet =1;
     const nbpage = 3;
     const pages=["Accueil","Projet","ExpetEtu"];
@@ -147,5 +147,5 @@ if (window.innerWidth > 600) {
         }
     }
 }else{
-    document.innerText="";
+    window.location.href = "tel.html";
 }
