@@ -34,7 +34,7 @@ body {
 
 #contenue{
     width: 100%;
-    height: 98%;
+    height: 97%;
     background-color: rgb(0 0 0 / 06%);
     transition: color 0.5s ease;
 }
@@ -42,12 +42,12 @@ body {
 #contenue div.page{
     display: flex;
     justify-content: space-between;
-    height: 95vh;
+    height: 90vh;
     padding: 5%;
 }
 
 footer {
-    height: 5vh;
+    height: 10vh;
     background-color: rgba(58, 26, 93, 0.76);
     display: flex;
     justify-content: space-between;
@@ -56,7 +56,7 @@ footer {
 footer button {
     height: auto;
     width: auto; /* largeur en fonction du texte */
-    margin-top: 0;
+    margin-top: 2.5%;
     font-size: 2vh; /* taille du texte relative à la largeur */
     max-font-size: 2vh; /* taille du texte relative à la largeur */
     background-color: transparent; /* arrière-plan transparent */
@@ -108,9 +108,44 @@ footer button {
     margin: 0;
 }
 
+.logoproj{
+    height: 5vw;
+    width: 7vw;
+    margin: 0;
+}
+
 .logos{
     margin-left: 15%;
     margin-top: 5%;
+}
+
+.logoexp{
+    height: 7vw;
+    width: 10vw;
+    margin-bottom: 5vh;
+}
+
+.logoetu{
+    height: 6vw;
+    width: 13vw;
+    margin-bottom: 6vh;
+}
+
+.titreexp{
+    font-size: 5vw;
+    color: #362d2d;
+    font-weight: bold;
+    height: auto;
+    margin-top: 2%;
+    margin-bottom: 5vh;
+    font-family: lato, serif;
+}
+
+.textexp{
+    color: #362d2d;
+    font-size: 1.3vw;
+    margin-top: 0;
+    font-family: Nunito, serif;
 }
 
 /*page d'accueil*/
@@ -163,7 +198,7 @@ footer button {
     left: 0;
     width: 85%;
     height: 80%;
-    background-color: rgba(0, 0, 0, 0.71); /* fond opaque */
+    background-color: rgba(0, 0, 0, 0.8); /* fond opaque */
     justify-content: center; /* centre le texte horizontalement et verticalement */
     align-items: center;
     text-align: center;

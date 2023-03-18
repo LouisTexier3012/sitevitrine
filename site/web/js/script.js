@@ -18,6 +18,10 @@ if (window.innerWidth > 600) {
     function boutonpage(iactu){
         let div = document.getElementById("pages")
         div.innerText="";
+        let derniei =nbpage-1;
+        if (iactu === derniei){
+            derniei--;
+        }
         for (let i=0; i<nbpage;i++){
             if (i!==iactu) {
                 let bout = document.createElement("button");
