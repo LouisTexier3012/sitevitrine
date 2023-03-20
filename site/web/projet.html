@@ -7,18 +7,36 @@
     <title>Projets</title>
     <script defer type="text/javascript" src="js/projets.js"></script>
 </head>
+<body>
 <header>
     <nav>
         <ul>
-            <li><a href="#">Site Vitrine</a></li>
-            <li><a href="#">Faireply</a></li>
-            <li><a href="#">Champ de mines</a></li>
-            <li><a href="#">Aventurier du rail</a></li>
+            <li><a href="index.html">Accueil</a></li>
+            <li><button class="selection" id="Site-Vitrine-button" onclick="changeprojet('Site-Vitrine')">Site Vitrine</button></li>
+            <li><button id="Faireply-button" onclick="changeprojet('Faireply')">Faireply</button></li>
+            <li><button id="Champ-de-mines-button" onclick="changeprojet('Champ-de-mines')">Champ de mines</button></li>
+            <li><button id="Aventurier-du-rail-button" onclick="changeprojet('Aventurier-du-rail')">Aventurier du rail</button></li>
             <li class="menu-icon"><a href="#"><i class="fa fa-bars"></i></a></li>
         </ul>
     </nav>
 </header>
-<body>
+<main>
+    <div id="Site-Vitrine" class="visible" >
+        <h1>Site Vitrine</h1>
 
+    </div>
+    <div id="Faireply" class="cacher">
+        <h1>Faireply</h1>
+
+    </div>
+    <div id="Champ-de-mines" class="cacher">
+        <h1>Champ de mines</h1>
+
+    </div>
+    <div id="Aventurier-du-rail" class="cacher">
+        <h1>Aventurier du rail</h1>
+
+    </div>
+</main>
 </body>
 </html>

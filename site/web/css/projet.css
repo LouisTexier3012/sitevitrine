@@ -21,11 +21,32 @@ nav li {
     position: relative;
 }
 
+nav button {
+    display: block;
+    padding: 10px;
+    color: #444; /* couleur assombrie */
+    text-decoration: none;
+    background: none;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+nav button:hover {
+    background-color: #CFCFCF; /* couleur assombrie */
+}
+
+nav button:active {
+    animation-name: shake;
+    animation-duration: 0.5s;
+}
+
 nav a {
     display: block;
     padding: 10px;
     color: #444; /* couleur assombrie */
     text-decoration: none;
+    background: none;
+    border: none;
     transition: background-color 0.3s ease;
 }
 
@@ -53,6 +74,18 @@ nav li:not(:last-child)::after {
 }
 
 .menu-icon {
+    display: none;
+}
+
+.selection{
+    background-color: #b4b4b4; /* couleur assombrie */
+}
+
+main{
+    margin-top: 6vh;
+}
+
+.cacher{
     display: none;
 }
 
