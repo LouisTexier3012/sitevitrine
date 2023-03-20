@@ -2,7 +2,7 @@ if (window.innerWidth > 768) {
     let imageprojet =1;
     const nbpage = 3;
     const pages=["Accueil","Projet","ExpetEtu"];
-    const nompages=["Accueil","Projet","Experience"];
+    const nompages=["Accueil","Projets","Expériences"];
     let opacityfond =6;
     boutonpage(0);
     // window.addEventListener("wheel", function(event) {
@@ -27,6 +27,7 @@ if (window.innerWidth > 768) {
                 let bout = document.createElement("button");
                 bout.innerText = nompages[i];
                 bout.id = pages[i]+"bout";
+                bout.classList.add("textfooter");
                 bout.addEventListener("click", function (){miseajouurpage(i+1,iactu+1); boutonpage(i);});
                 div.appendChild(bout);
             }
