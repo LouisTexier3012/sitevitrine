@@ -10,10 +10,17 @@ body {
 }
 
 h1 {
-    text-align: right;
+    text-align: center;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+
 }
 
 .img-container {
+    display: flex;
     text-align: center;
 }
 
