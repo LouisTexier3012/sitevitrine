@@ -3,16 +3,27 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link rel="stylesheet" type="text/css" href="../../web/css/style.css">
-    <title>Message <3</title>
-    <!-- insertion script -->
+    <title>Message &lt;3</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-<form action="frontController.php?action=upload&controller=message" method="POST" enctype="multipart/form-data">
-    <input type="file" name="fileToUpload" id="fileToUpload">
-    <input type="submit" value="Upload File" name="submit">
-</form>
+<div class="container">
+    <form action="frontController.php?action=upload&controller=message" method="POST" enctype="multipart/form-data">
+        <h1>Envoyer un message &lt;3</h1>
+        <div class="img-container">
+            <input type="button" id="add" onclick="addimg()" value="Ajouter une image">
+            <div id="imgs"></div>
+        </div>
+        <div class="form-container">
+            <label for="message-principal">Message à envoyer &lt;3 :</label>
+            <textarea name="message" id="message-principal"></textarea>
+            <label for="signature">Signature :</label>
+            <input type="text" name="signature" id="signature">
+            <input type="number" id="nbimg" value="0" hidden>
+            <input type="submit" value="Envoyer le message" name="submit">
+        </div>
+    </form>
+</div>
+<script defer type="text/javascript" src="js/ecrire.js"></script>
 </body>
-<footer>
-</footer>
 </html>
