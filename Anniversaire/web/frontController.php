@@ -9,7 +9,6 @@ $loader->addNamespace('app\Anniversaire', __DIR__ . '/../src');
 $loader->register();
 use app\Anniversaire\Controller\GenericController;
 use app\Anniversaire\Controller\ControllerMessage;
-use app\Anniversaire\Lib\PreferenceControleur;
 
 
 
@@ -42,11 +41,7 @@ if (isset($_GET['controller'])){
         GenericController::error("Page Not Found");
     }
 }else{
-    if (PreferenceControleur::existe()){
-        $controller = "app\Anniversaire\Controller\Controller".ucfirst(PreferenceControleur::lire());
-    }else {
-        $controller = "app\Anniversaire\Controller\Controllermessage";
-    }
+    $controller = "app\Anniversaire\Controller\Controllermessage";
     extracted($controller);
 }
 
