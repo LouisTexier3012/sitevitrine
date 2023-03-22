@@ -10,15 +10,16 @@
 <div class="container">
     <form action="frontController.php?action=upload&controller=message" method="POST" enctype="multipart/form-data">
         <h1>Envoyer un message &lt;3</h1>
-        <div class="img-container">
+        <div class="img-container" id="img-container">
             <input type="button" id="add" onclick="addimg()" value="Ajouter une image">
+            <input type="button" id="remove" onclick="remove()" value="Enlever une image">
             <div id="imgs"></div>
         </div>
         <div class="form-container">
             <label for="message-principal">Message à envoyer &lt;3 :</label>
             <textarea name="message" id="message-principal"></textarea>
             <label for="signature">Signature :</label>
-            <input type="text" name="signature" id="signature">
+            <input type="text" name="signature" id="signature" required>
             <input type="number" id="nbimg" value="0" hidden>
             <input type="submit" value="Envoyer le message" name="submit">
         </div>

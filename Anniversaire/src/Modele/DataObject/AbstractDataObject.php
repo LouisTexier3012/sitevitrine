@@ -1,10 +1,8 @@
 <?php
 
-namespace App\PlusCourtChemin\Modele\DataObject;
+namespace App\Anniversaire\Modele\DataObject;
 
 abstract class AbstractDataObject
 {
-
-    public abstract function exporterEnFormatRequetePreparee(): array;
 
 }

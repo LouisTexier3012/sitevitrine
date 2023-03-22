@@ -34,7 +34,7 @@ function extracted(string $control): void
 
 
 if (isset($_GET['controller'])){
-    $controller ="app\Anniversaire\Controller\Controller".ucfirst($_GET['controller']);
+    $controller = sprintf("App\Anniversaire\Controller\Controller%s", ucfirst($_GET['controller']));
     if (class_exists($controller)){
         extracted($controller);
     }else{

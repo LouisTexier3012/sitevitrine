@@ -1,9 +1,9 @@
 <?php
 
-namespace App\PlusCourtChemin\Modele\Repository;
+namespace App\Anniversaire\Modele\Repository;
 
-use App\PlusCourtChemin\Configuration\Configuration;
-use App\PlusCourtChemin\Configuration\ConfigurationBDDPostgreSQL;
+use App\Anniversaire\Configuration\Configuration;
+use App\Anniversaire\Configuration\ConfigurationBDDMySQL;
 use PDO;
 
 class ConnexionBaseDeDonnees
@@ -19,7 +19,7 @@ class ConnexionBaseDeDonnees
 
     private function __construct()
     {
-        $configuration = new Configuration(new ConfigurationBDDPostgreSQL());
+        $configuration = new Configuration(new ConfigurationBDDMySQL());
         $configurationBDD = $configuration->getConfigurationBDD();
 
         // Connexion à la base de données
@@ -30,7 +30,7 @@ class ConnexionBaseDeDonnees
             $configurationBDD->getOptions()
         );
 
-        // On active le mode d'affichage des erreurs, et le lancement d'exception en cas d'erreur
+        // On active le mode d'affichage des erreurs et le lancement d'exception en cas d'erreur
         $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }
 

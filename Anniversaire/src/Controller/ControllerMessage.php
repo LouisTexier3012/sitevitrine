@@ -1,6 +1,6 @@
 <?php
 
-namespace app\Anniversaire\Controller;
+namespace App\Anniversaire\Controller;
 
 
 class ControllerMessage extends  GenericController{

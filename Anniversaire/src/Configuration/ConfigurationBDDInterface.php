@@ -1,6 +1,6 @@
 <?php
 
-namespace App\PlusCourtChemin\Configuration;
+namespace App\Anniversaire\Configuration;
 
 interface ConfigurationBDDInterface
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace App\PlusCourtChemin\Modele\Repository;
+namespace App\Anniversaire\Modele\Repository;
 
-use App\PlusCourtChemin\Modele\DataObject\AbstractDataObject;
+use App\Anniversaire\Modele\DataObject\AbstractDataObject;
 use PDOException;
 
 abstract class AbstractRepository
@@ -154,7 +154,7 @@ abstract class AbstractRepository
             return true;
         } catch (PDOException $exception) {
             if ($pdoStatement->errorCode() === "23000") {
-                // Je ne traite que l'erreur "Duplicate entry"
+                // Je ne traite que l'erreur "Duplicate entry".
                 return false;
             } else {
                 // Pour les autres erreurs, je transmets l'exception

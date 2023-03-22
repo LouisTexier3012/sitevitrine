@@ -1,3 +1,6 @@
+$bouton = document.getElementById("remove");
+document.getElementById("img-container").removeChild($bouton);
+
 function addimg() {
     let nb = document.getElementById("nbimg");
     if (nb.value<3){
@@ -6,6 +9,22 @@ function addimg() {
         input.type = "file";
         input.name = "fileToUpload";
         input.id = "fileToUpload" + nb.value;
-        document.getElementById("imgs").insertAdjacentElement("afterend", input);
+        document.getElementById("imgs").append(input);
+    }
+    if (Number(nb.value)===1){
+        document.getElementById("img-container").insertBefore($bouton, document.getElementById("add"));
+    }
+}
+
+function remove() {
+    let nb = document.getElementById("nbimg");
+    console.log(nb.value)
+    if (nb.value>0){
+        // document.getElementById("imgs").removeChild(document.getElementById("fileToUpload"+nb.value));
+        document.getElementById("imgs").removeChild(document.getElementById("fileToUpload" + nb.value));
+        nb.value = Number(nb.value) - 1;
+    }if (nb.value<1){
+        console.log(document.getElementById("img-container"))
+        document.getElementById("img-container").removeChild($bouton);
     }
 }

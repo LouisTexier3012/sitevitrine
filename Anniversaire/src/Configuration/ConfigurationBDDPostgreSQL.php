@@ -1,6 +1,6 @@
 <?php
 
-namespace App\PlusCourtChemin\Configuration;
+namespace App\Anniversaire\Configuration;
 
 use Exception;
 use PDO;
