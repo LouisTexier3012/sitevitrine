@@ -3,6 +3,9 @@
 namespace App\Anniversaire\Controller;
 
 
+use App\Anniversaire\Modele\DataObject\Message;
+use App\Anniversaire\Modele\Repository\MessageRepository;
+
 class ControllerMessage extends  GenericController{
 
     public static function ecrire(){
@@ -10,8 +13,10 @@ class ControllerMessage extends  GenericController{
     }
 
     public static function upload(){
-        for ($i=1; $i<$_REQUEST["nbimg"]; $i++){
-            $target_dir = "img/";
+        $lienimg = [];
+        $nb =$_REQUEST["nb-img"];
+        for ($i=1; $i<=$nb; $i++){
+            $target_dir = "img/message";
             $filetoyplode="fileToUpload".$i;
             $target_file = $target_dir . basename($_FILES[$filetoyplode]["name"]);
             $uploadOk = 1;
@@ -51,11 +56,12 @@ class ControllerMessage extends  GenericController{
             if ($uploadOk == 0) {
                 echo "Désolé, votre fichier n'a pas été téléchargé.";
 
-                // Si tout est ok, on tente d'uploader le fichier
+            // Si tout est ok, on tente d'uploader le fichier
             } else {
                 if (is_uploaded_file($_FILES[$filetoyplode]['tmp_name'])) {
                     if (move_uploaded_file($_FILES[$filetoyplode]["tmp_name"], $target_file)) {
                         echo "Le fichier " . htmlspecialchars(basename($_FILES[$filetoyplode]["name"])) . " a été téléchargé.";
+                        $lienimg[]= $_FILES[$filetoyplode]['tmp_name'];
                     } else {
                         echo "Désolé, une erreur s'est produite lors de l'upload de votre fichier.";
                     }
@@ -66,5 +72,26 @@ class ControllerMessage extends  GenericController{
 
             }
         }
+        for($j=0; $j<3; $j++){
+            if ($lienimg[$j] != null) {
+                if ($j == 0) {
+                    $lien1 = $lienimg[$j];
+                } else if ($j == 1) {
+                    $lien2 = $lienimg[$j];
+                } else {
+                    $lien3 = $lienimg[$j];
+                }
+            } else {
+                if ($j == 0) {
+                    $lien1 = null;
+                } else if ($j == 1) {
+                    $lien2 = null;
+                } else {
+                    $lien3 = null;
+                }
+            }
+        }
+        (new MessageRepository())->ajouter(Message::create($_REQUEST["message-principal"],$_REQUEST["signature"],$lien1,$lien2,$lien3));
+        self::afficheVue("message.html.twig",[]);
     }
 }
