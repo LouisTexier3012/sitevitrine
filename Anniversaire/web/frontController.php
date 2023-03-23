@@ -11,7 +11,6 @@ use app\Anniversaire\Controller\GenericController;
 use app\Anniversaire\Controller\ControllerMessage;
 
 
-
 /**
  * @param string $control
  * @return void
@@ -34,14 +33,14 @@ function extracted(string $control): void
 
 
 if (isset($_GET['controller'])){
-    $controller = sprintf("App\Anniversaire\Controller\Controller%s", ucfirst($_GET['controller']));
+    $controller = sprintf("App\Anniversaire\Controller\Controller%s.php", ucfirst($_GET['controller']));
     if (class_exists($controller)){
         extracted($controller);
     }else{
         GenericController::error("Page Not Found");
     }
 }else{
-    $controller = "app\Anniversaire\Controller\Controllermessage";
+    $controller = "app\Anniversaire\Controller\ControllerMessage";
     extracted($controller);
 }
 
