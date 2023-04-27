@@ -92,6 +92,14 @@ footer button {
     font-family: Cambria, serif;
 }
 
+.contact{
+    color: #362d2d;
+    font-size: 2vw;
+    font-weight: bold;
+    margin-bottom: 0;
+    font-family: Cambria, serif;
+}
+
 .text{
     color: #362d2d;
     font-size: 1vw;
@@ -256,6 +264,13 @@ footer button {
     cursor: pointer; /* curseur de souris en forme de main */
 }
 
+/*contact*/
+#contenu-contact{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
 
 .cacher{
     display: none;

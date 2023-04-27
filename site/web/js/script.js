@@ -1,8 +1,9 @@
-if (window.innerWidth > 768) {
+let projet="Site-Vitrine";
+if (window.innerWidth > 768 && window.location.href !== "http://localhost/sitevitrine/site/web/projet.html") {
     let imageprojet =1;
-    const nbpage = 3;
-    const pages=["Accueil","Projet","ExpetEtu"];
-    const nompages=["Accueil","Projets","Expériences"];
+    const nbpage = 4;
+    const pages=["Accueil","Projet","ExpetEtu","Contact"];
+    const nompages=["Accueil","Projets","Expériences","Contact"];
     let opacityfond =6;
     boutonpage(0);
     // window.addEventListener("wheel", function(event) {
@@ -147,6 +148,15 @@ if (window.innerWidth > 768) {
             newimage.style.display= 'flex ';
         }
     }
-}else{
+
+    function passageProjet(page = null){
+        if (page!=null){
+            projet=page;
+        }
+        localStorage.setItem("nomDuProjet", projet);
+        window.location.href = "projet.html"
+    }
+
+}else if (window.innerWidth <= 768){
     window.location.href = "tel.html";
 }

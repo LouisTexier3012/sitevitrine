@@ -19,7 +19,7 @@
             <p id="desctitre" class="partie-titre">Mon profil:</p>
             <p id="desc" class="text">Je suis une personne capable d'apprendre assez rapidement <br> et de m'adapter dans des situations complexes ou dans l'urgence.<br> Je suis passionné par le développement WEB et cherche à en apprendre plus.<br> Je suis très autonome, mais également performant lors de séances de travail en équipe.</p>
             <p id="actutitre" class="partie-titre">Ma recherche:</p>
-            <p id="actu" class="text">Étudiant en 2e année de BUT informatique, je recherche un stage<br> de 12 semaines à partir du 17 avril, dans le développement WEB.</p>
+            <p id="actu" class="text">Étudiant en 2e année de BUT informatique, je recherche un stage<br> de 8 semaines à partir du 15 mai, dans le développement WEB.</p>
         </div>
         <div id="imageaccueil" class="image">
             <p id="languetitre" class="partie-titre">Langages maîtrisés:</p>
@@ -44,7 +44,7 @@
     <div id="Projet" class="cacher">
         <div id="projets" class="info">
             <p id="titreprojet" class="titre">Mes Projets</p>
-            <a href="projet.html" class="partie-titre">Voir plus</a>
+            <button onclick="passageProjet()">Voir plus</button>
         </div>
         <!--TODO Screen a refaire -->
         <div id="projetimage" class="image">
@@ -54,7 +54,7 @@
                 <div class="contenue-texte-survol">
                     <img class="logoproj" src="img/premier/projet/Logo/faireply.png" title="Faireply">
                     <p>Faireply est un site de questions, réponses et votes. Le but du site est de laisser certains utilisateurs poser des questions ouvertes dont les réponses seront séparées en plusieurs sections prédéfinies par l'organisateur. Ce site a été codé entièrement en HTML, CSS et PHP, mais le projet m'a conduit à travailler d'autres langages tels que SQL et PL/SQL.</p>
-                    <a href="projet.html"><button>En savoir plus</button></a>
+                    <button onclick="passageProjet('Faireply')">En savoir plus</button>
                 </div>
             </div>
 
@@ -63,7 +63,7 @@
                 <div class="contenue-texte-survol">
                     <img class="logoproj" src="img/premier/projet/Logo/mine.png" title="Champ de mines">
                     <p>Lors d'un TD de JavaScript j'ai créé un simple jeu en ligne, le champ de mines. Le but de ce jeu est de déplacer le personnage sur le plateau et le jeu vous indiquera le nombre de mines autour de vous à ne pas toucher. Lors de ce TD j'ai pu apprendre beaucoup de base en JS, et j'ai pu implémenter des fonctionnalités supplémentaires au sujet initial.</p>
-                    <a href="projet.html"><button>En savoir plus</button></a>
+                    <button onclick="passageProjet('Champ-de-mines')">En savoir plus</button>
                 </div>
             </div>
 
@@ -72,16 +72,16 @@
                 <div class="contenue-texte-survol">
                     <img class="logoproj" src="img/premier/projet/Logo/site-vitrine.PNG" title="Site Vitrine">
                     <p>Ce site a été, au départ, un simple sujet de devoir en cours de PPP (Projet Personnel et Professionnel), mais j'ai décidé de le faire entièrement à la main sans logiciel no-code pour développer mes compétences et en apprendre de nouvelles en autodidacte. Cela m'a permis de faire un site montrant correctement une partie de mes compétences en front-end.</p>
-                    <a href="projet.html"><button>En savoir plus</button></a>
+                    <button onclick="passageProjet('Site-Vitrine')">En savoir plus</button>
                 </div>
             </div>
 
             <img id="Projet-4" class="proj cacher" src="img/premier/projet/Projet-4.PNG" title="aventurier du rail">
             <div class="texte-survol cacher">
                 <div class="contenue-texte-survol">
-                    <img class="logoproj" src="img/premier/projet/Logo/aventuriers-du-rail-logo.png" title="Faireply">
+                    <img class="logoproj" src="img/premier/projet/Logo/aventuriers-du-rail-logo.png" title="aventuriers-du-rail">
                     <p>Lors de ma première année de BUT informatique, j'ai dû, dans un projet, créer un jeu se nommant Les aventuriers du rail. Le but de ce projet était de recréer ce jeu de société en java et javafx. Ce projet m'a particulièrement plu par sa difficulté et sa liberté des choix.</p>
-                    <a href="projet.html"><button>En savoir plus</button></a>
+                    <button onclick="passageProjet('Aventurier-du-rail')">En savoir plus</button>
                 </div>
             </div>
             <div id="button">
@@ -123,6 +123,14 @@
                     <a href="https://louise-michel-narbonne.mon-ent-occitanie.fr" target="_blank"><img class="logoetu" src="img/premier/exprerience-etud/logo_um.png" alt="Louise-Michel"></a>
                 </li>
             </ul>
+        </div>
+    </div>
+    <div id="Contact" class="page">
+            <p id="cont" class="titre">Contact:</p>
+        <div id="contenu-contact">
+            <p id="email" class="contact"><a href="mailto:louis.texpro@gmail.com">louis.texpro@gmail.com</a></p>
+            <p id="linkedin" class="contact"><a href="https://www.linkedin.com/in/l-texier/" target="_blank">Linkedin</a></p>
+            <p id="tel" class="contact">06.69.43.70.47</p>
         </div>
     </div>
 </div>

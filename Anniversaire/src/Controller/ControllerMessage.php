@@ -17,15 +17,15 @@ class ControllerMessage extends  GenericController{
         echo "lalala";
         $lienimg = [];
         $nb =$_REQUEST["nb-img"];
-        $target_dir = "img/message";
+        $target_dir = "img/message/";
         for ($i=1; $i<=$nb; $i++){
-            $filetoyplode="fileToUpload".$i;
-            $target_file = $target_dir . basename($_FILES[$filetoyplode]["name"]);
+            $filetouplode="fileToUpload".$i;
+            $target_file = $target_dir . basename($_FILES[$filetouplode]["name"]);
             $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
             // Vérifie si le fichier est une image réelle ou une fausse image
             if (isset($_POST["submit"])) {
-                $check = getimagesize($_FILES[$filetoyplode]["tmp_name"]);
+                $check = getimagesize($_FILES[$filetouplode]["tmp_name"]);
                 if ($check !== false) {
                     echo "Le fichier est une image - " . $check["mime"] . ".";
                 } else {
@@ -39,7 +39,7 @@ class ControllerMessage extends  GenericController{
             }
 
             // Vérifie la taille du fichier
-            if ($_FILES["fileToUpload"]["size"] > 1000000000) {
+            if ($_FILES[$filetouplode]["size"] > 1000000000) {
                 throw new \Exception("Désolé, votre fichier est trop volumineux.");
             }
 
@@ -50,10 +50,10 @@ class ControllerMessage extends  GenericController{
             }
 
             // Si tout est ok, on tente d'uploader le fichier
-            if (is_uploaded_file($_FILES[$filetoyplode]['tmp_name'])) {
-                if (move_uploaded_file($_FILES[$filetoyplode]["tmp_name"], $target_file)) {
-                    echo "Le fichier " . htmlspecialchars(basename($_FILES[$filetoyplode]["name"])) . " a été téléchargé.";
-                    $lienimg[]= $_FILES[$filetoyplode]['tmp_name'];
+            if (is_uploaded_file($_FILES[$filetouplode]['tmp_name'])) {
+                if (move_uploaded_file($_FILES[$filetouplode]["tmp_name"], $target_file)) {
+                    echo "Le fichier " . htmlspecialchars(basename($_FILES[$filetouplode]["name"])) . " a été téléchargé.";
+                    $lienimg[]= $target_file;
                 } else {
                     throw new \Exception("Désolé, une erreur s'est produite lors de l'upload de votre fichier.");
                 }
@@ -62,26 +62,11 @@ class ControllerMessage extends  GenericController{
                 echo "Nom du fichier : '" . $_FILES['userfile']['tmp_name'] . "'.";
             }
         }
-        for($j=0; $j<3; $j++){
-            if ($lienimg[$j] != null) {
-                if ($j == 0) {
-                    $lien1 = $lienimg[$j];
-                } else if ($j == 1) {
-                    $lien2 = $lienimg[$j];
-                } else {
-                    $lien3 = $lienimg[$j];
-                }
-            } else {
-                if ($j == 0) {
-                    $lien1 = null;
-                } else if ($j == 1) {
-                    $lien2 = null;
-                } else {
-                    $lien3 = null;
-                }
-            }
-        }
+
+        $lien1 = $lienimg[0]? :"null";
+        $lien2 = $lienimg[1]? :"null";
+        $lien3 = $lienimg[2]? :"null";
         (new MessageRepository())->ajouter(Message::create($_REQUEST["message-principal"],$_REQUEST["signature"],$lien1,$lien2,$lien3));
-//        self::afficheVue("message.html.twig",[]);
+        self::afficheVue("message.html.twig",[]);
     }
 }

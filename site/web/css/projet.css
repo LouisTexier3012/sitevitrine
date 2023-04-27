@@ -81,6 +81,9 @@ nav li:not(:last-child)::after {
     background-color: #b4b4b4; /* couleur assombrie */
 }
 
+body{
+    background-color: rgba(222, 200, 200, 0.7);
+}
 main{
     margin-top: 6vh;
 }
@@ -121,8 +124,55 @@ main{
 
 @keyframes shake {
     0% { transform: translateX(0); }
-    25% { transform: translateX(-5px); }
-    50% { transform: translateX(0); }
-    75% { transform: translateX(5px); }
+    50% { transform: translateX(5px); }
     100% { transform: translateX(0); }
+}
+
+.visible{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+}
+
+.visible img.logoproj{
+    width: 30vw;
+    height: 20vh;
+    margin-left: 35vw;
+    padding-top: 10px;
+}
+.visible p{
+    padding: 2%;
+    font-size: 1vw;
+    border: rgba(13, 2, 51, 0.55) solid;
+}
+.visible h1{
+    font-size: 3vw;
+    margin-left: 42.5vw;
+    text-decoration: underline;
+}
+
+.visible h2{
+    font-size: 2vw;
+    text-decoration: underline;
+}
+
+.petiteImage{
+    padding: 0;
+    width: 20%;
+    height: 20%;
+    margin-left: 40%;
+}
+
+.moyenImage{
+    padding: 0;
+    width: 30%;
+    height: 30%;
+    margin-left: 35%;
+}
+
+.image{
+    padding: 0;
+    width: 40%;
+    height: 40%;
+    margin-left: 30%;
 }

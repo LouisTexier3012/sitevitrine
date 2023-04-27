@@ -6,9 +6,9 @@ class Message extends AbstractDataObject {
 
     private string $signature;
     private string $message;
-    private string $lien1;
-    private string $lien2;
-    private string $lien3;
+    private ?string $lien1;
+    private ?string $lien2;
+    private ?string $lien3;
 
     /**
      * @param string $signature
@@ -26,14 +26,9 @@ class Message extends AbstractDataObject {
         $this->lien3 = $lien3;
     }
 
+
     public static function create(string $message, string $signature, string $lien1 = null, string $lien2 = null, string $lien3 = null) : Message {
-        $messages = new Message();
-        $messages->setSignature($signature);
-        $messages->setMessage($message);
-        $messages->setLien1($lien1);
-        $messages->setLien2($lien2);
-        $messages->setLien3($lien3);
-        return $messages;
+        return new Message($signature,$message,$lien1,$lien2,$lien3);
     }
 
 

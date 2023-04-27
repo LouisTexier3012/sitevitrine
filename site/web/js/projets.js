@@ -1,4 +1,9 @@
 const proj = ["","","-button"]
+let projetstart= localStorage.getItem("nomDuProjet");
+if (projetstart!=null){
+    localStorage.removeItem("nomDuProjet");
+    changeprojet(projetstart);
+}
 function changeprojet(nom) {
     let div = document.getElementById(nom);
     let anciendiv= document.querySelector(".visible");

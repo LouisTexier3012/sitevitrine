@@ -4,12 +4,11 @@ require_once __DIR__."/../src/Lib/Psr4AutoloaderClass.php";
 // instantiate the loader
 $loader = new Anniversaire\Lib\Psr4AutoloaderClass();
 // register the base directories for the namespace prefix
-$loader->addNamespace('app\Anniversaire', __DIR__ . '/../src');
+$loader->addNamespace('App\Anniversaire', __DIR__ . '/../src');
 // register the autoloader
 $loader->register();
-use app\Anniversaire\Controller\GenericController;
-use app\Anniversaire\Controller\ControllerMessage;
-
+use App\Anniversaire\Controller\GenericController;
+use App\Anniversaire\Controller\ControllerMessage;
 
 /**
  * @param string $control
@@ -33,8 +32,9 @@ function extracted(string $control): void
 
 
 if (isset($_GET['controller'])){
-    $controller = sprintf("App\Anniversaire\Controller\Controller%s.php", ucfirst($_GET['controller']));
-    if (class_exists($controller)){
+    $controller = "App\Anniversaire\Controller\Controller".ucfirst($_GET['controller']);
+    $verif=class_exists($controller);
+    if ($verif){
         extracted($controller);
     }else{
         GenericController::error("Page Not Found");
